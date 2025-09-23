@@ -1,0 +1,16 @@
+# Archivos y carpetas de IntelliJ
+.idea/
+*.iml
+out/
+
+# Archivos y carpetas de Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# Archivos del sistema (Mac)
+.DS_Store
+
+# Archivos de compilación
+*.class
