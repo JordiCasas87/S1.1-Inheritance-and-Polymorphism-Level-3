@@ -1,74 +1,62 @@
 package model;
 
 public abstract class Article {
-	
-	//atributos
+
 		
-	private String titular;
-	private String texto;
-	private int puntuacion;
-	private int precio;
+	private String title;
+	private String text;
+	private int puntuation;
+	private int price;
 	
-	//constructor
-	
-	public Article(String titular) {
-		
-		this.titular = titular;
-		this.puntuacion = puntuacion;
-		this.precio = precio;
-		this.texto = "";
+
+	public Article(String title) {
+		this.title = title;
+		this.puntuation = puntuation;
+		this.price = price;
+		this.text = "";
 	}
 
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getText() {
+		return this.text;
+	}
+
+	public void setText(String texto) {
+		this.text = text;
+	}
+
+	public int getPuntuation() {
+		return this.puntuation;
+	}
+
+	public void setPuntuation(int newPuntuation) {
+		this.puntuation = newPuntuation;
+	}
+
+	public int getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(int newPrice) {
+		this.price = newPrice;
+	}
+
+	public abstract void CalculatePrice();
 	
-	//getter y setter
+	public abstract void CalculatePuntuation();
 	
-	public String getTitular() {
-		return this.titular;
-	}
 
-	public void setTitular(String titular) {
-		this.titular = titular;
-	}
-
-	public String getTexto() {
-		return this.texto;
-	}
-
-	public void setTexto(String texto) {
-		this.texto = texto;
-	}
-
-	public int getPuntuacion() {
-		return this.puntuacion;
-	}
-
-	public void setPuntuacion(int puntuacion) {
-		this.puntuacion = puntuacion;
-	}
-
-	public int getPrecio() {
-		return this.precio;
-	}
-
-	public void setPrecio(int precio) {
-		this.precio = precio;
-	}
-
-	
-	//metodos
-	
-	public abstract void CalcularPrecio();
-	
-	public abstract void CalcularPuntuacion();
-	
-	
-	//to string
 	@Override
 	public String toString() {
-		return "Noticia [titular=" + titular + ", texto=" + texto + ", puntuacion=" + puntuacion + ", precio=" + precio
+		return "Article [title=" + title + ", text" + text + ", puntuation=" + puntuation + ", price=" + price
 				+ "]";
 	}
-
-
 
 }

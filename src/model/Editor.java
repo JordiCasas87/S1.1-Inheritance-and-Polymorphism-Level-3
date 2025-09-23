@@ -3,70 +3,52 @@ package model;
 import java.util.ArrayList;
 
 public class Editor {
-	
-	//atributos
-	
-	private String nom;
+
+	private String name;
 	private final String dni;
-	static int sueldo =1500;
-	private ArrayList <Article> listaArticles;
+	static int salary =1500;
+	private ArrayList <Article> listArticles;
 	
-	
-	//cosntructor
-	
-	public Editor(String nom, String dni) {
+
+	public Editor(String name, String dni) {
 		
-		this.nom = nom;
+		this.name = name;
 		this.dni = dni;
-		this.listaArticles = new ArrayList <Article>();
-		
-	}
-	
-	//getter y setter
-
-	public String getNom() {
-		return this.nom;
+		this.listArticles = new ArrayList <Article>();
 	}
 
-
-	public void setNom(String nom) {
-		this.nom = nom;
+	public String getName() {
+		return this.name;
 	}
 
-
-	public static int getSueldo() {
-		return sueldo;
+	public void setNom(String name) {
+		this.name= name;
 	}
 
-
-	public static void setSueldo(int sueldo) {
-		Editor.sueldo = sueldo;
+	public static int getSalary() {
+		return salary;
 	}
 
-
-	public ArrayList<Article> getListaNoticias() {
-		return listaArticles;
+	public static void setSalary(int salary) {
+		Editor.salary = salary;
 	}
 
-
-	public void setListaNoticias(Article article) {
-		listaArticles.add(article);
-		System.out.println("Noticia agregada");
+	public ArrayList<Article> getListArticles() {
+		return listArticles;
 	}
 
+	public void setListArticles(Article article) {
+		listArticles.add(article);
+		System.out.println("New article agree");
+	}
 
 	public String getDni() {
 		return this.dni;
 	}
-	
-	//to string
 
-	
 	@Override
 	public String toString() {
-		return "Redactor [nom=" + nom + ", dni=" + dni +", Sou= "+sueldo +", ListaNoticias=" + listaArticles + "]";
+		return "Redactor [name=" + name + ", dni=" + dni +", Sou= "+salary +", ListArticles="  + listArticles + "]";
 	}
-	
-		
 
 }

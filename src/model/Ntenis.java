@@ -1,90 +1,67 @@
 package model;
 
 public class Ntenis extends Article {
-	
-	
-	//atributos
-	private String competicion;
-	private String tenistas;
-	
-	
-	//constructor
-	public Ntenis(String titular, String competicion, String tenistas) {
-		super(titular);
-		this.competicion = competicion;
-		this.tenistas = tenistas;
-	}
-	
-	
-	
-	//getters y setters
 
-	public String getCompeticion() {
-		return competicion;
+	private String competition;
+	private String players;
+
+
+	public Ntenis(String title, String competition, String players) {
+		super(title);
+		this.competition = competition;
+		this.players = players;
 	}
 
-	public void setCompeticion(String competicion) {
-		this.competicion = competicion;
+	public String getCompetition() {
+		return competition;
 	}
 
-	public String getTenistas() {
-		return tenistas;
+	public void setCompetition(String competition) {
+		this.competition = competition;
 	}
 
-	public void setTenistas(String tenistas) {
-		this.tenistas = tenistas;
+	public String getPlayers() {
+		return players;
 	}
 
-
-	//metodos
-
-	/*
-	 * Notícies de tenis:
-	Preu inicial: 150 € 
-	Federer, Nadal o Djokovic: 100 €
-	 */
+	public void setPlayers(String players) {
+		this.players = players;
+	}
 	
 	@Override
-	public void CalcularPrecio() { // modificar si en el paramtreo hay dos nombres
-		//hay que usar Contains
+	public void CalculatePrice() {
+
+		int totalPrice=150;
 		
-		int totalPrecio=150;
-		
-		if (tenistas.toLowerCase().contains("federer")|| 
-				tenistas.toLowerCase().contains("nadal")||
-				tenistas.toLowerCase().contains("djokovic")) {
-			totalPrecio += 100;
+		if (players.toLowerCase().contains("federer")||
+				players.toLowerCase().contains("nadal")||
+				players.toLowerCase().contains("djokovic")) {
+			totalPrice += 100;
 		}
 
-		System.out.println("El precio de esta noticia de Tenis es: "+totalPrecio+".");
-		super.setPrecio (totalPrecio);
-		
+		System.out.println("The price of this tennis news is: "+totalPrice+".");
+		super.setPrice (totalPrice);
 	}
 
 	@Override
-	public void CalcularPuntuacion() {
+	public void CalculatePuntuation() {
 		
-		int totalPuntuacion = 4;
+		int totalPuntuation = 4;
 		
-		if (tenistas.toLowerCase().contains("federer")|| 
-				tenistas.toLowerCase().contains("nadal")||
-				tenistas.toLowerCase().contains("djokovic")) {
-			totalPuntuacion += 3;
+		if (players.toLowerCase().contains("federer")||
+				players.toLowerCase().contains("nadal")||
+				players.toLowerCase().contains("djokovic")) {
+			totalPuntuation += 3;
 		}
 
-		
-		System.out.println("La puntuacion de esta noticia de Tenis es: "+totalPuntuacion+".");
-		super.setPuntuacion(totalPuntuacion);
-		
+		System.out.println("“The puntuation of this tennis news is:”"+totalPuntuation+".");
+		super.setPuntuation(totalPuntuation);
 	}
-	
-	//to string
 	
 	@Override
 	public String toString() {
-		return "Ntenis. Titular= "+ super.getTitular()+"[competicion=" + competicion + ", Tenistas =" + tenistas 
-				+ ", Precio="+super.getPrecio()+", Puntuacion= "+super.getPuntuacion()+"]";
+		return "Ntenis. Title= "+ super.getTitle()+"[competition=" + competition + ", players =" + players
+				+ ", Price="+super.getPrice()+", Puntuation= "+super.getPuntuation()+"]";
 	}
-	
 
 }

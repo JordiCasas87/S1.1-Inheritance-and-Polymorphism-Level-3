@@ -2,129 +2,87 @@ package model;
 
 public class Nfootball extends Article {
 
-
-	//atributos
-	private String competicion;
+	private String competition;
 	private String club;
-	private String jugador;
+	private String player;
 
-
-	//constructor
-	public Nfootball(String titular, String competicion, String club, String jugador) {
-		super(titular);
-		this.competicion = competicion;
+	public Nfootball(String title, String competition, String club, String player) {
+		super(title);
+		this.competition = competition;
 		this.club = club;
-		this.jugador = jugador;
+		this.player = player;
 	}
 
-
-
-	//getters y setters
-
-	public String getCompeticion() {
-		return this.competicion;
+	public String getCompetition() {
+		return this.competition;
 	}
 
-
-	public void setCompeticion(String competicion) {
-		this.competicion = competicion;
+	public void setCompetition(String competition) {
+		this.competition = competition;
 	}
-
 
 	public String getClub() {
 		return this.club;
 	}
 
-
 	public void setClub(String club) {
 		this.club = club;
 	}
 
-
-	public String getJugador() {
-		return this.jugador;
+	public String getPlayer() {
+		return this.player;
 	}
 
-
-	public void setJugador(String jugador) {
-		this.jugador = jugador;
+	public void setPlayer(String player) {
+		this.player = player;
 	}
-
-
-	//datos precios noticias futbol:
-	/*Notícies de futbol: 
-		Preu inicial: 300 €
-		Lliga de Campions: 100 €
-		Barça o Madrid: 100 €
-		Ferran Torres o Benzema: 50 €
-	 */
-
 
 
 	@Override
-	public void CalcularPrecio() {
-		int totalPrecio =300;
-		if (competicion.equalsIgnoreCase("Lliga champions")) {
-			totalPrecio += 100;
+	public void CalculatePrice() {
+		int totalPrice =300;
+		if (competition.equalsIgnoreCase("Lliga champions")) {
+			totalPrice += 100;
 		}
 		if (club.equalsIgnoreCase("Barça")||club.equalsIgnoreCase("Madrid")) {
-			totalPrecio += 100;
+			totalPrice += 100;
 		}
 
-
-		if (jugador.equalsIgnoreCase("Ferran Torres")||jugador.equalsIgnoreCase("Benzema")) {
-			totalPrecio +=50;
+		if (player.equalsIgnoreCase("Ferran Torres")||player.equalsIgnoreCase("Benzema")) {
+			totalPrice +=50;
 		}
 
-
-		System.out.println("El precio de esta noticia de Futbol es: "+totalPrecio+".");
-		super.setPrecio (totalPrecio);
+		System.out.println("“The price of this football news is:”"+totalPrice+".");
+		super.setPrice (totalPrice);
 	}
 
-
-
-	//datos puntuacion
-
-	/*Notícies de futbol:
-		5 Punts.
-		Lliga de Campions: 3 punts
-		Lliga: 2 punts
-		Barça o Madrid: 1 punt
-		Ferran Torres o Benzema: 1 pun
-	 */
-
 	@Override
-	public void CalcularPuntuacion() {
+	public void CalculatePuntuation() {
 
-		int totalPuntuacion = 5;
-		if (competicion.equalsIgnoreCase("Lliga champions")) {
-			totalPuntuacion += 3;
+		int totalPuntuation = 5;
+		if (competition.equalsIgnoreCase("Lliga champions")) {
+			totalPuntuation += 3;
 		}
-		if (competicion.equalsIgnoreCase("Lliga")) {
-			totalPuntuacion += 2;
+		if (competition.equalsIgnoreCase("Lliga")) {
+			totalPuntuation += 2;
 		}
 
 		if (club.equalsIgnoreCase("Madrid")||club.equalsIgnoreCase("Barça")) {
-			totalPuntuacion += 1;
+			totalPuntuation += 1;
 		}
 
-
-		if (jugador.equalsIgnoreCase("Ferran Torres")||jugador.equalsIgnoreCase("Benzema")) {
-			totalPuntuacion +=1;
+		if (player.equalsIgnoreCase("Ferran Torres")||player.equalsIgnoreCase("Benzema")) {
+			totalPuntuation +=1;
 		}
 
-		System.out.println("La puntuacion de esta noticia de Futbol es: "+totalPuntuacion+".");
-		super.setPuntuacion(totalPuntuacion);
+		System.out.println("The puntuation of this tennis news is: "+totalPuntuation+".");
+		super.setPuntuation(totalPuntuation);
 	}
 
-
-	//to string
 
 	@Override
 	public String toString() {
-		return "Nfutbol. Titular= "+ super.getTitular()+ ", Competicion= " + competicion + ", club=" + club + ", jugador=" + jugador +
-				", Precio="+super.getPrecio()+", Puntuacion= "+super.getPuntuacion()+"]";
+		return "Nfutbol. Title= "+ super.getTitle()+ ", competition= " + competition + ", club=" + club + ", player=" + player +
+				", Price="+super.getPrice()+", Puntuation= "+super.getPuntuation()+"]";
 	}
-
-
 }

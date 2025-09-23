@@ -2,72 +2,50 @@ package model;
 
 public class NMoto extends Article {
 
-	//atributo
-	private String equipo;
+	private String team;
 
-	
-	//constructor
-	public NMoto(String titular, String equipo) {
-		super(titular);
-		this.equipo = equipo;
+	public NMoto(String title, String team) {
+		super(title);
+		this.team = team;
 	}
 
-
-	// getter y setter
-	public String getEquipo() {
-		return equipo;
+	public String getTeam() {
+		return team;
 	}
 
-
-	public void setEquipo(String equipo) {
-		this.equipo = equipo;
+	public void setTeam(String team) {
+		this.team = team;
 	}
 
-
-	//metodos
-	
-	/*Notícies de motociclisme:
-		Preu inicial: 100 €
-		Honda o Yamaha: 50 €
-		*/
-	
 	@Override
-	public void CalcularPrecio() {
+	public void CalculatePrice() {
 		
-		int totalPrecio = 100;
+		int totalPrice = 100;
 
-		if (equipo.equalsIgnoreCase("Honda")||
-				equipo.equalsIgnoreCase("Yamaha"))
-			totalPrecio += 50;
+		if (team.equalsIgnoreCase("Honda")||
+				team.equalsIgnoreCase("Yamaha"))
+			totalPrice += 50;
 
-		System.out.println("El precio de esta noticia de Motociclismo es: "+totalPrecio+".");
-		super.setPrecio (totalPrecio);
+		System.out.println("The price of this moto news is:”: "+totalPrice+".");
+		super.setPrice (totalPrice);
 	}
-		
 
-	/*Notícies de Motociclisme:
-		3 punts
-		Honda o Yamaha: 3 punts*/
-	
 	@Override
-	public void CalcularPuntuacion() {
-		int totalPuntuacion = 3;
+	public void CalculatePuntuation() {
+		int totalPuntuation = 3;
 
-		if (equipo.equalsIgnoreCase("Honda")||
-				equipo.equalsIgnoreCase("Yamaha"))
-			totalPuntuacion += 3;
+		if (team.equalsIgnoreCase("Honda")||
+				team.equalsIgnoreCase("Yamaha"))
+			totalPuntuation += 3;
 
-		System.out.println("La puntuacion de esta noticia de Motociclismo es: "+totalPuntuacion+".");
-		super.setPuntuacion (totalPuntuacion);
-		
+		System.out.println("The puntuation of this moto news is:" +totalPuntuation+ ".");
+		super.setPuntuation (totalPuntuation);
 	}
-	
-	//to string
+
 	@Override
 	public String toString() {
-		return "Noticia Motociclismo. Titular= "+ super.getTitular()+ "[Equipo=" + equipo + " Precio=" 
-	+super.getPrecio()+", Puntuacion= "+super.getPuntuacion()+"]";
+		return "Article Moto. Title= "+ super.getTitle()+ "[team=" + team + " Price="
+	+super.getPrice()+", Puntuation= "+super.getPuntuation()+"]";
 	}
-	
 
 }
